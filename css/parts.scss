@@ -1,0 +1,590 @@
+@import './mq';
+@import './variables';
+
+
+/**
+ * 画面遷移
+ */
+
+//ローディング画面
+#js-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $blkColor;
+  z-index: 99999;
+  text-align: center;
+  color: $whtColor;
+}
+
+#js-splash_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1rem;
+
+  & img {
+    width: 300px;
+
+  }
+}
+
+//画面遷移アニメーション
+body {
+  background: $blkColor;
+
+  &.appear {
+    background: $whtColor;
+  }
+}
+
+body.appear .js-splash_bg {
+  display: block;
+  border-radius: 50%;
+  animation-name: Anime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.js-splash_bg {
+  display: none;
+  content: '';
+  position: fixed;
+  transform: scale(100);
+  background: $blkColor;
+  z-index: 9999;
+
+  // 丸のスタート形状
+  top: calc(50% - 1rem);
+  left: calc(50% - 1rem);
+  width: 2rem;
+  height: 2rem;
+}
+
+@keyframes Anime {
+  0% {
+    transform: scale(100);
+  }
+  50% {
+    transform: scale(50);
+  }
+  100% {
+    transform: scale(0);
+    display: none;
+  }
+}
+
+#container, #container-left, #container-right {
+  opacity: 0;
+}
+
+//bodyにappearクラス付与後出現
+body.appear #container,
+body.appear #container-left,
+body.appear #container-right {
+  animation-name: AnimeAppear;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+
+@keyframes AnimeAppear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/**
+ * ハンバーガーメニュー
+ */
+
+// ボタンフレーム
+.js-open_btn {
+  position: fixed;
+  top: 5%;
+  right: 3%;
+  background: transparent;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  z-index: 9999;
+
+  // responsive
+  @include mq(md) {
+    top: 3%;
+    right: 7%;
+  }
+
+  @include mq(lg) {
+    display: none;
+  }
+
+  // ボタンインナー
+  & span {
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    right: 14px;
+    height: 3px;
+    background: $blkColor;
+    width: 45%;
+
+    &:nth-of-type(1) {
+      top: 15px;
+    }
+    &:nth-of-type(2) {
+      top: 23px;
+    }
+    &:nth-of-type(3) {
+      top: 31px;
+    }
+  }
+
+  &.active span:nth-of-type(1),
+  &.active span:nth-of-type(3) {
+    top: 23px;
+  }
+}
+
+
+/**
+ * グローバルナビ
+ */
+
+#g-nav {
+  position: fixed;
+  top: 0;
+  right: -120%;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  background: $whtColor;
+  transition: all .6s;
+
+  // アクティブクラス付与後
+  &.panel-active {
+    right: 0%;
+  }
+
+  // ナビゲーション
+  & ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+
+  // リストレイアウト
+  & li {
+    text-align: center;
+
+    & a {
+      padding: 10px 20px;
+      display: block;
+      letter-spacing: 0.1em;
+      font-weight: bold;
+      color: $blkColor;
+      font-size: 1.2rem;
+
+      &:hover {
+        color: $orgColor;
+        border: 1px solid $orgColor;
+        transform: scale(1.08);
+        transition: all .2s;
+      }
+    }
+  }
+}
+
+
+/**
+ * scrollbtn
+ */
+
+.scrollbtn {
+  position: absolute;
+  top: 55.5%;
+  right: 15%;
+  z-index: 1;
+
+  // 波紋形状
+  display: inline-block;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: $blkColor;
+  outline: none;
+  transition: all .3s;
+
+
+  // responsive
+  @include mq(md) {
+    position: fixed;
+    right: 10%;
+  }
+
+  @include mq(xl) {
+    top: 80%;
+    right: 13%;
+  }
+
+  // 波紋設定
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    right: -70%;
+
+    // 波紋形状
+    border: 1px solid $blkColor;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    opacity: 1;
+    animation: 1s circleAnime linear infinite;
+  }
+
+  // 波紋2つ目のアニメーション
+  &::before {
+    animation-delay: .6s;
+  }
+
+  & span {
+    display: block;
+    font-size: 0.8rem;
+    position: relative;
+    top: 40%;
+    left: 60%;
+  }
+
+  // 矢印設定
+  & span::after {
+    content: '';
+    position: absolute;
+    top: 160%;
+    left: 8%;
+
+    // 矢印形状
+    border: 14px solid transparent;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-left-color: $blkColor;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes circleAnime {
+  0% {
+    transform: scale(0.58);
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+
+/**
+ * textTyping
+ */
+
+.js-textTyping span {
+  display: none;
+}
+
+.js-textTyping::after {
+  content: '';
+  animation: typinganime .8s ease infinite;
+}
+
+@keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/**
+ * テキストナビゲーション
+ */
+
+.menu-list a {
+  position: relative;
+}
+
+.menu-list.current a,
+.menu-list a:hover {
+  color: $orgColor;
+}
+
+.menu-list a::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: calc(50% - 100px /2);
+  width: 100px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: $blkColor;
+  transition: all .3s;
+  transform: scale(0.04, 1);
+  transform-origin: center bottom;
+}
+
+.menu-list.current a::after,
+.menu-list a:hover::after {
+  height: 2px;
+  border-radius: 0;
+  transform: scale(0.8, 1);
+}
+
+
+/**
+ * 要素がランダムに出現
+ */
+
+.js-box2 {
+  opacity: 0;
+}
+
+.fadeUp {
+  animation-name: fadeUpA;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpA {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/**
+ * text animation
+ */
+
+.blur {
+  animation-name: blurAnime;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blurAnime {
+  from {
+    filter: blur(10px);
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/**
+ * btn transform
+ */
+
+.btntransform {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  line-height: 60px;
+  outline: none;
+  font-weight: bold;
+  color: $blkColor;
+
+  &:hover {
+    color: $whtColor;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: -100%;
+    z-index: -1;
+    width: 30px;
+    height: 30px;
+    background-color: $orgColor;
+    border-radius: 25px;
+    transition: .3s ease-out;
+  }
+
+  &:hover::before {
+    width: 100px;
+    transform: scale(1.05);
+    background-color: $orgColor;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: -35px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid $blkColor;
+    border-right: 2px solid $blkColor;
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+
+  &:hover::after {
+    border-top: 3px solid $whtColor;
+    border-right: 3px solid $whtColor;
+  }
+}
+
+
+/**
+ * slider
+ */
+
+.slider {
+  padding: 10px;
+  margin: 50px 0;
+}
+
+.slider li {
+  opacity: 0.8;
+
+  @include mq(md) {
+    width: 100%;
+  }
+
+  & img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.slider .slick-slide {
+  margin: 0 10px;
+}
+
+
+/**
+ * slider-text
+ */
+
+.bg-text {
+  position: relative;
+  font-size: 10rem;
+  width: 100%;
+  height: 120px;
+  background-color: transparent;
+  display: block;
+  overflow: visible;
+  z-index: -1;
+
+  &_content {
+    position: absolute;
+    top: 100%;
+    color: $mainColor;
+    text-shadow: 2px 2px 3px $orgColor,
+    2px 2px 3px $orgColor,
+    2px 2px 3px $orgColor,
+    2px 2px 3px $orgColor;
+    line-height: 100px;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: animate-banner 100s linear infinite;
+    opacity: 0.2;
+  }
+}
+
+@keyframes animate-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/**
+ * swiper
+ */
+
+.swiper {
+  overflow: hidden;
+  padding: 10%;
+  margin-bottom: 50px;
+
+  & .swiper-slide {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.3);
+      transition: transform 1.9s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(32, 35, 61, 0.1);
+    }
+
+    &-active {
+      & img {
+        transform: none;
+      }
+
+      & .hero-title {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.hero {
+
+  &-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 20px));
+    color: $orgColor;
+    font-size: 1.2rem;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease 1s, transform 0.3s ease 1s;
+  }
+}

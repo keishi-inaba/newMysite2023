@@ -1,0 +1,17 @@
+$breakpoints: (
+  // 426px以上 スマホサイズ
+  'sm': '(min-width: 426px)',
+  // 769px以上 タブレットサイズ
+  'md': '(min-width: 769px)',
+  // 860px以上 タブレットサイズ
+  'lg': '(min-width: 860px)',
+  // 1023px以上 パソコンサイズ
+  'xl': '(min-width: 1023px)',
+);
+
+@mixin mq($breadkpoint: sm) {
+  @media #{map-get($breakpoints, $breadkpoint)} {
+    @content;
+  }
+}
+
