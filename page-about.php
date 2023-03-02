@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ホームページをお持ちでない方や初めての方向き。低コスト、高品質のWebサイト制作ならkiiwebdesignにお任せください。">
   <title>kiiwebdesign-about</title>
+
 
   <!-- reset css -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
@@ -23,7 +25,7 @@
   <!-- 画面遷移 -->
   <div id="js-splash">
     <div id="js-splash_logo">
-      <img src="./images/Logo : Black.jpg" alt="">
+      <img src="./images/Logo : Black.jpg" alt="kiiwebdesignのロゴ">
     </div>
   </div>
   <div class="js-splash_bg"></div>
@@ -123,7 +125,7 @@
       <section id="About-page">
        <div class="about-page_inner">
           <div class="about-page_img">
-            <img src="./images/DF61F616-9843-4C4C-BB93-AB2DA233A8B2_1_105_c.jpeg" alt="">
+            <img src="./images/DF61F616-9843-4C4C-BB93-AB2DA233A8B2_1_105_c.jpeg" alt="アバウトページ画像">
           </div>
           <p class="box-flame js-blurTrigger">
             初めまして。<span>kiiwebdesign</span>と申します。

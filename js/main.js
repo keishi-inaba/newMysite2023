@@ -4,12 +4,12 @@
 
 function screenTransition() {
   setTimeout(function() {
-    $('#js-splash_logo').fadeOut('slow');
+    jQuery('#js-splash_logo').fadeOut('slow');
   }, 1500);
 
   setTimeout(function() {
-    $('#js-splash').fadeOut('slow', function() {
-      $('body').addClass('appear');
+    jQuery('#js-splash').fadeOut('slow', function() {
+      jQuery('body').addClass('appear');
     });
   }, 1200);
 }
@@ -18,18 +18,6 @@ function screenTransition() {
 /*--------------------------------
  * ハンバーガーメニュー
 --------------------------------*/
-
-// function openMenu() {
-//   $('.js-open_btn').click(function() {
-//     $(this).toggleClass('active');
-//     $('#g-nav').toggleClass('panel-active');
-//   });
-
-//   $(document).on('click', '#g-nav a', function() {
-//     $('.js-open_btn').removeClass('active');
-//     $('#g-nav').removeClass('panel-active');
-//   });
-// }
 
 function openMenu() {
   const openBtn = document.querySelector('.js-open_btn');
@@ -56,33 +44,33 @@ function openMenu() {
 --------------------------------*/
 
 function textTypingAnime() {
-  $('.js-textTyping').each(function() {
-    var elemP = $(this).offset().top - 100;
-    var scroll = $(window).scrollTop();
-    var windowH = $(window).height();
+  jQuery('.js-textTyping').each(function() {
+    var elemP = jQuery(this).offset().top - 100;
+    var scroll = jQuery(window).scrollTop();
+    var windowH = jQuery(window).height();
     var thisChild = "";
 
     if(scroll >= elemP - windowH) {
-      thisChild = $(this).children();
+      thisChild = jQuery(this).children();
       thisChild.each(function(i) {
          var time = 190;
-         $(this).delay(time * i).fadeIn(time);
+         jQuery(this).delay(time * i).fadeIn(time);
       });
     } else {
-      thisChild = $(this).children();
+      thisChild = jQuery(this).children();
       thisChild.each(function() {
-        $(this).stop();
-        $(this).css("display", "none");
+        jQuery(this).stop();
+        jQuery(this).css("display", "none");
       });
     }
   });
 }
 
 // 画面読み込み後直ぐ関数を呼び出す
-$(window).on('load', function() {
-  var element = $(".js-textTyping");
+jQuery(window).on('load', function() {
+  var element = jQuery(".js-textTyping");
   element.each(function() {
-    var text =$(this).html();
+    var text =jQuery(this).html();
     var textbox = "";
     text.split('').forEach(function(t) {
       if(t !== "") {
@@ -91,7 +79,7 @@ $(window).on('load', function() {
         textbox += t;
       }
     });
-    $(this).html(textbox);
+    jQuery(this).html(textbox);
   });
   textTypingAnime();
 })
@@ -104,20 +92,20 @@ $(window).on('load', function() {
 function moveAnimetion() {
 
   // 読み込まれたら直ぐにランダムに出現
-  var randomElm = $(".js-randomBox");  // 親要素取得
-  var randomElmChild = $(randomElm).children();  // 親の子要素を取得
-  if(!$(randomElm).hasClass("play")) {  // 親要素に play クラスが付いていなければ処理する
+  var randomElm = jQuery(".js-randomBox");  // 親要素取得
+  var randomElmChild = jQuery(randomElm).children();  // 親の子要素を取得
+  if(!jQuery(randomElm).hasClass("play")) {  // 親要素に play クラスが付いていなければ処理する
     randomAnime();
   }
 
   function randomAnime() {
-   $(randomElm).addClass("play");  // 親要素に play クラスを付与
+   jQuery(randomElm).addClass("play");  // 親要素に play クラスを付与
    var rnd = Math.floor(Math.random() * randomElmChild.length);  // 配列数からランダムで数値を取得
    var moveData = "fadeUp";  // アニメーション名 = CSSのクラス名を指定
-   $(randomElmChild[rnd]).addClass(moveData);  // アニメーションのクラスを追加
+   jQuery(randomElmChild[rnd]).addClass(moveData);  // アニメーションのクラスを追加
    randomElmChild.splice(rnd, 1);  // アニメーション追加となった要素かを配列から削除
    if(randomElmChild.length == 0) {  // 配列の残りがあるか確認
-    $(randomElm).removeClass("play");  // 無くなった場合は親要素の playクラス を削除
+    jQuery(randomElm).removeClass("play");  // 無くなった場合は親要素の playクラス を削除
    } else {
     setTimeout(function() {
       randomAnime();
@@ -134,15 +122,15 @@ function moveAnimetion() {
 --------------------------------*/
 
 function BlurTextAnime() {
- $(".js-blurTrigger").each(function() {
-  var elemPos = $(this).offset().top - 50;
-  var scroll = $(window).scrollTop();
-  var windowH = $(window).height();
+ jQuery(".js-blurTrigger").each(function() {
+  var elemPos = jQuery(this).offset().top - 50;
+  var scroll = jQuery(window).scrollTop();
+  var windowH = jQuery(window).height();
 
   if(scroll >= elemPos - windowH) {
-    $(this).addClass('blur');
+    jQuery(this).addClass('blur');
   } else {
-    $(this).removeClass('blur');
+    jQuery(this).removeClass('blur');
   }
  });
 }
@@ -153,7 +141,7 @@ function BlurTextAnime() {
 --------------------------------*/
 
 function slider() {
-  $('.slider').slick({
+  jQuery('.slider').slick({
     arrows: false,
     autoplay: true,
     autoplaySpeed: 4000,
@@ -212,7 +200,7 @@ class HeroSlider {
  * スクロール時に関数を呼び出す
 --------------------------------*/
 
-$(window).on('scroll', function() {
+jQuery(window).on('scroll', function() {
   moveAnimetion();
   BlurTextAnime();
 });
@@ -222,7 +210,7 @@ $(window).on('scroll', function() {
  * ロード時に関数を呼び出す
 --------------------------------*/
 
-$(window).on('load', function() {
+jQuery(window).on('load', function() {
   openMenu();
   screenTransition();
   moveAnimetion();
