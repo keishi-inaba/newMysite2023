@@ -93,7 +93,6 @@ img {
   // responsive
   @include mq(sm) {
     max-width: 500px;
-    background-image: url(../images/abstract-932662_1920\ \(1\).jpg);
   }
 
   @include mq(md) {

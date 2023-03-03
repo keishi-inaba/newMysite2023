@@ -89,19 +89,19 @@
     <nav>
       <ul id="menu" class="js-randomBox">
         <li class="menu-list current js-box2">
-          <a href="index.html">top</a>
+          <a href="<?php echo esc_url(home_url('top')); ?>">top</a>
         </li>
         <li class="menu-list js-box2">
-          <a href="about.html">about</a>
+          <a href="<?php echo esc_url(home_url('about')); ?>">about</a>
         </li>
         <li class="menu-list js-box2">
-          <a href="service.html">service</a>
+          <a href="<?php echo esc_url(home_url('service')); ?>">service</a>
         </li>
         <li class="menu-list js-box2">
-          <a href="price.html">price</a>
+          <a href="<?php echo esc_url(home_url('price')); ?>">price</a>
         </li>
         <li class="menu-list js-box2">
-          <a href="contact.html">contact</a>
+          <a href="<?php echo esc_url(home_url('contact')); ?>">contact</a>
         </li>
       </ul>
     </nav>
@@ -135,27 +135,3 @@
     <a href="#footer" class="scrollbtn">
       <span>Scroll</span>
     </a>
-
-    <?php if(is_front_page()): ?>
-
-    <!-- top section -->
-    <section class="top-section box" id="top">
-      <div class="top-section_title">
-        <h2 class="font-h2 js-textTyping">
-          Please leave your website development to us!
-        </h2>
-      </div>
-      <div class="top-img">
-        <img src="<?php echo get_template_directory_uri();?>/images/C9AC4C08-7663-4ECE-959B-7409E0FAA389_1_105_c.jpeg" alt="トップページ画像">
-      </div>
-    </section>
-
-    <?php else: ?>
-
-    <div id="about-top" class="about-page_top">
-      <div id="about-top_image" class=""></div>
-      <h2><?php echo get_the_title(); ?></h2>
-    </div>
-
-    <?php endif; ?>
-
