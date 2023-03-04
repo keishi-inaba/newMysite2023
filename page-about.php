@@ -7,6 +7,15 @@
         <h2><?php the_title(); ?></h2>
       </div>
 
+      <!-- pankuzu -->
+      <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">
+        <?php
+          if(function_exists('bcn_display')) {
+            bcn_display();
+          }
+        ?>
+      </div>
+
       <!-- about page section -->
 
       <section id="About-page">
