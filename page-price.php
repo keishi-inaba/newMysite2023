@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
      <!-- contact link -->
-     <a href="contact.html" class="contactbtn">
+     <a href="<?php echo esc_url(home_url('contact')); ?>" class="contactbtn">
       <span>Contact</span>
      </a>
 
@@ -26,7 +26,7 @@
        <div class="price-page_inner">
           <div class="price-table">
             <div class="price-table_list">
-              <a href="contact.html">
+              <a href="<?php echo esc_url(home_url('contact')); ?>">
                 <h3>
                   Website Creation Price / WordPress
                 </h3>
@@ -44,7 +44,7 @@
               </a>
             </div>
             <div class="price-table_list">
-              <a href="contact.html">
+              <a href="<?php echo esc_url(home_url('contact')); ?>">
                 <h3>
                   Website Creation Price / Wix
                 </h3>
@@ -62,7 +62,7 @@
               </a>
             </div>
             <div class="price-table_list">
-              <a href="contact.html">
+              <a href="<?php echo esc_url(home_url('contact')); ?>">
                 <h3>
                   Design Price
                 </h3>

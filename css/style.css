@@ -86,7 +86,6 @@ img {
 @media (min-width: 426px) {
   #container {
     max-width: 500px;
-    background-image: url(../images/abstract-932662_1920\ \(1\).jpg);
   }
 }
 @media (min-width: 769px) {
@@ -985,6 +984,9 @@ img {
 .sns-list li a {
   font-size: 0.7rem;
 }
+.sns-list li a svg {
+  writing-mode: vertical-lr;
+}
 @media (min-width: 1023px) {
   .sns-list li a {
     font-size: 1rem;
@@ -993,6 +995,40 @@ img {
 .sns-list li a:hover {
   color: orange;
   transform: scale(1.1);
+}
+
+.sns-list2 {
+  position: fixed;
+  bottom: 35%;
+  left: 3%;
+  z-index: 20;
+  writing-mode: vertical-lr;
+}
+.sns-list2 a {
+  font-size: 0.7rem;
+}
+@media (min-width: 1023px) {
+  .sns-list2 a {
+    font-size: 1rem;
+  }
+}
+.sns-list2 a:hover {
+  color: orange;
+  transform: scale(1.1);
+}
+@media (min-width: 769px) {
+  .sns-list2 {
+    bottom: 8%;
+  }
+}
+@media (min-width: 1023px) {
+  .sns-list2 {
+    bottom: 3%;
+    left: 3.5%;
+    writing-mode: horizontal-tb;
+    text-align: center;
+    font-size: 1rem;
+  }
 }
 
 /**

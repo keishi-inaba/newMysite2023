@@ -1099,6 +1099,7 @@ font-size: 0.9rem;
   & li {
     padding: 10px 0px;
 
+
     // responsive
     @include mq(xl) {
       margin: 0px 15px;
@@ -1106,6 +1107,10 @@ font-size: 0.9rem;
 
     & a {
       font-size: 0.7rem;
+
+      & svg {
+        writing-mode: vertical-lr;
+      }
 
       // responsive
       @include mq(xl) {
@@ -1117,6 +1122,41 @@ font-size: 0.9rem;
         transform: scale(1.1);
       }
     }
+  }
+}
+
+.sns-list2 {
+  position: fixed;
+  bottom: 35%;
+  left: 3%;
+  z-index: 20;
+  writing-mode: vertical-lr;
+
+  & a {
+    font-size: 0.7rem;
+
+    // responsive
+    @include mq(xl) {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      color: orange;
+      transform: scale(1.1);
+    }
+  }
+
+  // responsive
+  @include mq(md) {
+    bottom: 8%;
+  }
+
+  @include mq(xl) {
+    bottom: 3%;
+    left: 3.5%;
+    writing-mode: horizontal-tb;
+    text-align: center;
+    font-size: 1rem;
   }
 }
 

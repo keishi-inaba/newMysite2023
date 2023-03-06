@@ -21,7 +21,7 @@
        <div>
          <ul class="service-page_list">
            <li>
-              <a href="price.html">
+              <a href="<?php echo esc_url(home_url('price')); ?>">
                 <h4 class="service-page_title">WordPress</h4>
                 <div class="service-list_img">
                   <img src="<?php echo get_template_directory_uri();?>/images/office-worker-analyzing-business-information-on-computer-software-working-with-statistics-and-data-research-to-plan-project-and-presentation-creating-report-with-charts-on-monitor.jpg" alt="サービスページ画像">
@@ -48,7 +48,7 @@
               </a>
             </li>
             <li>
-              <a href="price.html">
+              <a href="<?php echo esc_url(home_url('price')); ?>">
                 <h4 class="service-page_title">Wix</h4>
                 <div class="service-list_img">
                   <img src="<?php echo get_template_directory_uri();?>/images/nocode-coding-concept-3d-rendering (2).jpg" alt="サービスページ画像">
@@ -73,7 +73,7 @@
               </a>
             </li>
             <li>
-              <a href="price.html">
+              <a href="<?php echo esc_url(home_url('price')); ?>">
                 <h4 class="service-page_title">Figma</h4>
                 <div class="service-list_img">
                   <img src="<?php echo get_template_directory_uri();?>/images/スクリーンショット 2022-11-09 15.18.26.png" alt="サービスページ画像">
