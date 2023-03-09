@@ -10,9 +10,4 @@ function my_enqueue_scripts() {
 
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
-// アイキャッチ画像を利用できるようにする
-add_theme_support('post-thumbnails');
-
-// aboutページ画像
-add_image_size('about', true);
-
+?>

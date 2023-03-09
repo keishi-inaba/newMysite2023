@@ -1,5 +1,5 @@
-<!-- sns list -->
-<ul class="sns-list randomBox">
+    <!-- sns list -->
+    <ul class="sns-list randomBox">
        <li class="box2">
          <a href="https://twitter.com/81_kii">
           twitter

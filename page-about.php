@@ -36,7 +36,7 @@
           </p>
         </div>
         <div class="about-page_btn">
-          <a href="contact.html" class="js-blurTrigger">contact</a>
+          <a href="<?php echo esc_url(home_url('contact')); ?>" class="js-blurTrigger">contact</a>
         </div>
       </section>
 

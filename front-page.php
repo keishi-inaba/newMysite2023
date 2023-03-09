@@ -18,15 +18,9 @@
          <h3 class="about-title font-h3">
           <span class="sub-title">a</span>bout
          </h3>
-         <div class="ornament">
-           <div class="ornament-parts"></div>
-           <div class="ornament-parts"></div>
-           <div class="ornament-parts"></div>
-           <div class="ornament-parts"></div>
-           <div class="ornament-parts"></div>
-           <div class="ornament-parts"></div>
-           <div class="ornament-parts"></div>
-         </div>
+
+         <?php get_template_part('includes/ornament'); ?>
+
          <h4 class="font-h4">
           <span>クライアント様のご要望</span>を形に
 
@@ -37,7 +31,7 @@
             自社サービスのプロモーション、ユーザー(消費者)とのコミュニケーション活動、自社のデータ収集と分析、自社の認知、売上アップ、集客など様々な用途に合わせたサイト創りを心掛けています。しっかりコミュニケーションをとり、 一緒にサイトを創り上げていきましょう。
          </p>
          <div class="about-btn">
-           <a href="about.html" class="btntransform js-blurTrigger">view</a>
+           <a href="<?php echo esc_url(home_url('about')); ?>" class="btntransform js-blurTrigger">view</a>
          </div>
        </div>
     </section>
@@ -48,15 +42,9 @@
          <h3 class="service-title font-h3">
           <span class="sub-title">s</span>ervice
          </h3>
-         <div class="ornament">
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-         </div>
+
+         <?php get_template_part('includes/ornament'); ?>
+
          <img src="<?php echo get_template_directory_uri();?>/images/close-up-of-male-hands-using-laptop-in-home.jpg" alt="サービスセクション画像" class="service-img">
          <ul class="service-list">
            <li class="js-blurTrigger">
@@ -91,33 +79,33 @@
             </li>
           </ul>
           <div class="service-btn">
-            <a href="service.html" class="btntransform js-blurTrigger">view</a>
+            <a href="<?php echo esc_url(home_url('service')); ?>" class="btntransform js-blurTrigger">view</a>
           </div>
         </div>
      </section>
 
     <!-- swiper section -->
-     <div class="hero">
-       <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <div class="hero-title">Figma</div>
-              <img src="<?php echo get_template_directory_uri();?>/images/スクリーンショット 2022-11-09 15.18.26.png" alt="Webデザインのイメージ画像">
-            </div>
-            <div class="swiper-slide">
-              <div class="hero-title">WordPress</div>
-              <img src="<?php echo get_template_directory_uri();?>/images/3569031_s.jpg" alt="Webサイト制作イメージ画像">
-            </div>
-            <div class="swiper-slide">
-              <div class="hero-title">Wix</div>
-              <img src="<?php echo get_template_directory_uri();?>/images/3704717_s.jpg" alt="Webサイト制作イメージ画像">
-            </div>
+    <div class="hero">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="hero-title">Figma</div>
+            <img src="<?php echo get_template_directory_uri();?>/images/スクリーンショット 2022-11-09 15.18.26.png" alt="Webデザインのイメージ画像">
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-title">WordPress</div>
+            <img src="<?php echo get_template_directory_uri();?>/images/3569031_s.jpg" alt="Webサイト制作イメージ画像">
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-title">Wix</div>
+            <img src="<?php echo get_template_directory_uri();?>/images/3704717_s.jpg" alt="Webサイト制作イメージ画像">
           </div>
         </div>
-     </div>
+      </div>
+    </div>
 
      <!-- price section -->
      <section class="price-section box" id="price">
@@ -125,18 +113,12 @@
           <h3 class="price-title font-h3">
             <span class="sub-title">p</span>rice
           </h3>
-          <div class="ornament">
-            <div class="ornament-parts"></div>
-            <div class="ornament-parts"></div>
-            <div class="ornament-parts"></div>
-            <div class="ornament-parts"></div>
-            <div class="ornament-parts"></div>
-            <div class="ornament-parts"></div>
-            <div class="ornament-parts"></div>
-          </div>
+
+          <?php get_template_part('includes/ornament'); ?>
+
           <ul class="price-list">
             <li class="js-blurTrigger">
-              <a href="price.html" class="price-bg">
+              <a href="<?php echo esc_url(home_url('price')); ?>" class="price-bg">
                 <h3 class="price-sub-title font-h3">
                   WebsiteCreation/サイト制作
                 </h3>
@@ -146,7 +128,7 @@
               </a>
             </li>
             <li class="js-blurTrigger">
-              <a href="price.html" class="price-bg">
+              <a href="<?php echo esc_url(home_url('price')); ?>" class="price-bg">
                 <h3 class="price-sub-title font-h3">
                   Wix/ノーコードサイト制作
                 </h3>
@@ -156,7 +138,7 @@
               </a>
             </li>
             <li class="js-blurTrigger">
-              <a href="price.html" class="price-bg">
+              <a href="<?php echo esc_url(home_url('price')); ?>" class="price-bg">
                 <h3 class="price-sub-title font-h3">
                   Design/デザイン
                 </h3>
@@ -167,7 +149,7 @@
             </li>
           </ul>
           <div class="price-btn">
-            <a href="price.html" class="btntransform js-blurTrigger">view</a>
+            <a href="<?php echo esc_url(home_url('price')); ?>" class="btntransform js-blurTrigger">view</a>
           </div>
         </div>
      </section>
@@ -176,21 +158,15 @@
      <section class="contact-section box" id="contact">
       <div class="contact-inner">
         <h3 class="contact-title font-h3"><span class="sub-title">c</span>ontact</h3>
-        <div class="ornament">
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-          <div class="ornament-parts"></div>
-        </div>
+
+        <?php get_template_part('includes/ornament'); ?>
+
         <p class="contact-text font-sm js-blurTrigger">
           お問い合わせはフォームからどうぞ
         </p>
         <img src="<?php echo get_template_directory_uri();?>/images/website-dashboard-creation-and-coding-support-site-maintenance.jpg" alt="コンタクトセクション画像" class="contact-img">
         <div class="contact-btn">
-          <a href="contact.html" class="btntransform js-blurTrigger">view</a>
+          <a href="<?php echo esc_url(home_url('contact')); ?>" class="btntransform js-blurTrigger">view</a>
         </div>
       </div>
     </section>

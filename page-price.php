@@ -50,7 +50,7 @@
                 </h3>
                 <h4>Wix制作代行料金</h4>
                 <h5>
-                  ・Wix制作代行制作 ￥40,000(＋消費税)
+                  ・Wix制作代行制作 ￥30,000(＋消費税)
                 </h5>
                 <p class="price-page_text font-sm">
                   ページ数はトップページ、下層ページを含む6ページでの税抜料金になります。
@@ -83,13 +83,31 @@
         </div>
      </section>
 
-     <!-- slider -->
-     <ul class="slider">
-      <li><img src="<?php echo get_template_directory_uri();?>/images/web-design-concepts-with-blurred-background.jpg" alt="スライダー画像"></li>
-      <li><img src="<?php echo get_template_directory_uri();?>/images/website-design-content-layout-graphic.jpg" alt="スライダー画像"></li>
-      <li><img src="<?php echo get_template_directory_uri();?>/images/desktop-source-code-and-wallpaper-by-computer-language-with-coding-and-programming.jpg" alt="スライダー画像"></li>
-      <li><img src="<?php echo get_template_directory_uri();?>/images/programmer-working-in-a-software-development-and-coding-technologies-website-design-technology-concept (1).jpg" alt="スライダー画像"></li>
-     </ul>
+     <div class="hero">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="hero-title">Web Production</div>
+            <img src="<?php echo get_template_directory_uri();?>/images/web-design-concepts-with-blurred-background.jpg" alt="Webデザインのイメージ画像">
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-title">Wix production agency</div>
+            <img src="<?php echo get_template_directory_uri();?>/images/website-design-content-layout-graphic.jpg" alt="Webサイト制作イメージ画像">
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-title">Web Design</div>
+            <img src="<?php echo get_template_directory_uri();?>/images/desktop-source-code-and-wallpaper-by-computer-language-with-coding-and-programming.jpg" alt="Webサイト制作イメージ画像">
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-title">Low cost High quality</div>
+            <img src="<?php echo get_template_directory_uri();?>/images/programmer-working-in-a-software-development-and-coding-technologies-website-design-technology-concept (1).jpg" alt="Webサイト制作イメージ画像">
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 <?php get_footer(); ?>

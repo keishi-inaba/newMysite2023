@@ -14,8 +14,6 @@
           </svg>
         </a>
       </li>
-
-      <!-- sns list navi -->
       <li>
         <a href="https://www.instagram.com/kii__81/?hl=ja">
         instagram

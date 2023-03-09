@@ -137,31 +137,12 @@ function BlurTextAnime() {
 
 
 /*--------------------------------
- * slider
---------------------------------*/
-
-function slider() {
-  jQuery('.slider').slick({
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    speed: 3000,
-    infinite: true,
-    cssEase: 'ease-in-out',
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  });
-}
-
-
-/*--------------------------------
  * swiper
 --------------------------------*/
 
 document.addEventListener('DOMContentLoaded', function() {
   const hero = new HeroSlider('.swiper');
   hero.start({delay: 2500});
-
 });
 
 class HeroSlider {
@@ -215,5 +196,4 @@ jQuery(window).on('load', function() {
   screenTransition();
   moveAnimetion();
   BlurTextAnime();
-  slider();
 });

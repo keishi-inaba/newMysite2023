@@ -15,21 +15,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- swiper css -->
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <!-- slick css -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <!-- swiper js -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
   <?php wp_head(); ?>
+
+
+</script>
 </head>
 <body <?php body_class(); ?>>
 
    <!-- 画面遷移 -->
    <div id="js-splash">
     <div id="js-splash_logo">
-      <img src="<?php echo get_template_directory_uri();?>/images/Logo : Black.jpg" alt="kiiwebdesignのロゴ">
+      <img src="<?php echo get_template_directory_uri();?>/images/LogoBlack.jpg" alt="kiiwebdesignのロゴ">
     </div>
    </div>
    <div class="js-splash_bg"></div>
@@ -52,7 +56,7 @@
     <header id="header">
       <h1 class="header-title font-h1 js-randomBox">
         <a href="index.html" class="js-box2">
-          <img src="<?php echo get_template_directory_uri();?>/images/Logo : White.jpg" alt="kiiwebdesignのロゴ">
+          <img src="<?php echo get_template_directory_uri();?>/images/LogoWhite.jpg" alt="kiiwebdesignのロゴ">
         </a>
       </h1>
     </header>
