@@ -37,7 +37,7 @@
   <!-- conatainer left -->
   <div id="container-left" >
     <a href="index.html">
-      <img src="<?php echo get_template_directory_uri();?>/images/Logo : White.jpg" alt="kiiwebdesignのロゴ">
+      <img src="<?php echo get_template_directory_uri();?>/images/LogoWhite.jpg" alt="kiiwebdesignのロゴ">
     </a>
 
     <!-- container left navi -->
